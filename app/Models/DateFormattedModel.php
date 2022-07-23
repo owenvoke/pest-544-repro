@@ -3,11 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Jenssegers\Mongodb\Eloquent\Model;
 
 class DateFormattedModel extends Model
 {
-    use \Illuminate\Database\Eloquent\Factories\HasFactory;
+    use HasFactory;
+
+    protected $connection = 'mongodb';
+    protected $collection = 'datemodels';
 
     protected $casts = [
         'dateAttribute' => 'date:Y-m-d',

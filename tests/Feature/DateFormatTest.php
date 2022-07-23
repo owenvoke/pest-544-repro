@@ -3,7 +3,7 @@
 use App\Http\Livewire\DateFormat;
 use App\Models\DateFormattedModel;
 
-uses(\Illuminate\Foundation\Testing\RefreshDatabase::class);
+uses(Illuminate\Foundation\Testing\DatabaseMigrations::class);
 
 it('can serialize a date', function () {
     $model = DateFormattedModel::factory()->create();
